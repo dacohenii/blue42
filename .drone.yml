@@ -26,4 +26,4 @@ steps:
 - name: flash
   image: lagerdata/lager-cli
   commands:
-  - lager gateway status
+  - echo $LAGER_HOST
