@@ -7,6 +7,12 @@ clone:
     image: plugins/git
     recursive: true
 
+- name: show_env
+  image: lagerdata/cortexm-devenv
+  commands:
+  - echo $LAGER_HOST
+  - env
+
 
 steps:
 - name: submodules
