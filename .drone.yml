@@ -17,10 +17,9 @@ steps:
   image: lagerdata/cortexm-devenv
   commands:
   - mkdir -p _build
-  - cd _build
-  - cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../cmake/arm-gcc-toolchain.cmake
-  - cmake --build .
-  - cp ../third_party/nRF5_SDK_17.0.0_9d13099/components/softdevice/s140/hex/s140_nrf52_7.0.1_softdevice.hex .
+  - cmake . -G Ninja -DCMAKE_TOOLCHAIN_FILE=./cmake/arm-gcc-toolchain.cmake
+  - cmake --build ./_build
+  - cp ./third_party/nRF5_SDK_17.0.0_9d13099/components/softdevice/s140/hex/s140_nrf52_7.0.1_softdevice.hex .
 
 - name: flash
   image: lagerdata/lager-cli
