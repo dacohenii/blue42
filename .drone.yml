@@ -13,11 +13,6 @@ steps:
   image: alpine/git
   commands:
   - git submodule update --init --recursive
-- name: show_env
-  image: lagerdata/cortexm-devenv
-  commands:
-  - echo $foo
-  - env
 
 - name: build
   image: lagerdata/cortexm-devenv
