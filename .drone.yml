@@ -31,4 +31,4 @@ steps:
     LAGER_AUDIENCE: "https://b972600c4737.ngrok.io/gateway"
     LAGER_AUTH_URL: "https://dev-c-cvn8kq.auth0.com/"
   commands:
-  - echo $LAGER_HOST
+  - lager gateway status
