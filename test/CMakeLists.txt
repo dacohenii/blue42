@@ -1,1 +1,2 @@
-add_subdirectory(test_suite_1)
+#add_subdirectory(test_suite_1)
+add_subdirectory(test_suite_mpu9250_drv)

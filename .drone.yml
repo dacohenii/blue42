@@ -14,16 +14,16 @@ steps:
   commands:
   - git submodule update --init --recursive
 - name: show_env
-  image: adhanali/blue42
+  image: lagerdata/cortexm-devenv
   commands:
   - echo $foo
   - env
 
 - name: build
-  image: adhanali/blue42
+  image: lagerdata/cortexm-devenv
   commands:
   - mkdir -p _build
   - cd _build
   - cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=../cmake/arm-gcc-toolchain.cmake
   - cmake --build .
-  - cp /opt/nordic/nRF5_SDK_16.0.0/components/softdevice/s140/hex/s140_nrf52_7.0.1_softdevice.hex .
+  - cp ./third_party/nRF5_SDK_17.0.0_9d13099/components/softdevice/s140/hex/s140_nrf52_7.0.1_softdevice.hex .

@@ -8,6 +8,7 @@ target_include_directories(blue42 PRIVATE "${CMAKE_CURRENT_LIST_DIR}/include" "$
 target_compile_options(blue42 PRIVATE -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16)
 target_compile_options(blue42 PRIVATE $<$<COMPILE_LANGUAGE:C>:-Wall -Werror -g -gstrict-dwarf -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums>)
 target_compile_options(blue42 PRIVATE $<$<COMPILE_LANGUAGE:ASM>:-x assembler-with-cpp>)
+target_compile_options(blue42 PUBLIC "-ffile-prefix-map=${CMAKE_SOURCE_DIR}=.")
 
 
 target_compile_definitions(blue42 PRIVATE FLOAT_ABI_HARD NRF52840_XXAA NRF_SD_BLE_API_VERSION=7 S140 SOFTDEVICE_PRESENT)
