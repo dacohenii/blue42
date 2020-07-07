@@ -24,6 +24,7 @@ steps:
 - name: flash
   image: lagerdata/lager-cli
   environment:
+    NOVERIFY: 1
     LAGER_WS_HOST: "wss://dev.lagerdata.app"
     LAGER_HOST: "https://dev.lagerdata.app"
     LAGER_CLIENT_ID: "XjJGqmcQdHo1DrpjmWdSFGJnfOrk2Asj"
