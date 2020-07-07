@@ -30,4 +30,4 @@ steps:
     LAGER_AUDIENCE: "https://dev.lagerdata.app/gateway"
     LAGER_AUTH_URL: "https://dev-c-cvn8kq.auth0.com/"
   commands:
-  - lager testrun --serial-device /dev/ttyACM0 third_party/nRF5_SDK_17.0.0_9d13099/components/softdevice/s140/hex/s140_nrf52_7.0.1_softdevice.hex --hexfile _build/test/test_suite_mpu9250_drv/blue42_test_mpu9250_drv.hex --test-runner unity
+  - lager testrun --serial-device /dev/ttyACM0 --hexfile third_party/nRF5_SDK_17.0.0_9d13099/components/softdevice/s140/hex/s140_nrf52_7.0.1_softdevice.hex --hexfile _build/test/test_suite_mpu9250_drv/blue42_test_mpu9250_drv.hex --test-runner unity
