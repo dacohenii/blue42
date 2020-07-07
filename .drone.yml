@@ -24,8 +24,8 @@ steps:
 - name: flash
   image: lagerdata/lager-cli
   environment:
-    LAGER_WS_HOST: "wss://004fdbf4d7c9.ngrok.io"
-    LAGER_HOST: "https://004fdbf4d7c9.ngrok.io"
+    LAGER_WS_HOST: "wss://dev.lagerdata.app"
+    LAGER_HOST: "https://dev.lagerdata.app"
     LAGER_CLIENT_ID: "XjJGqmcQdHo1DrpjmWdSFGJnfOrk2Asj"
     LAGER_AUDIENCE: "https://dev.lagerdata.app/gateway"
     LAGER_AUTH_URL: "https://dev-c-cvn8kq.auth0.com/"
