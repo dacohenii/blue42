@@ -25,7 +25,7 @@ steps:
   image: lagerdata/lager-cli
   environment:
     NOVERIFY: 1
-    LAGER_WS_HOST: "wss://dev.lagerdata.app"
+    LAGER_WS_HOST: "ws://dev.lagerdata.app:9000"
     LAGER_HOST: "https://dev.lagerdata.app"
     LAGER_CLIENT_ID: "XjJGqmcQdHo1DrpjmWdSFGJnfOrk2Asj"
     LAGER_AUDIENCE: "https://dev.lagerdata.app/gateway"
