@@ -24,10 +24,10 @@ steps:
 - name: flash
   image: lagerdata/lager-cli
   environment:
-    # LAGER_WS_HOST: "wss://b972600c4737.ngrok.io"
-    # LAGER_HOST: "https://b972600c4737.ngrok.io"
+    LAGER_WS_HOST: "wss://004fdbf4d7c9.ngrok.io"
+    LAGER_HOST: "https://004fdbf4d7c9.ngrok.io"
     LAGER_CLIENT_ID: "XjJGqmcQdHo1DrpjmWdSFGJnfOrk2Asj"
-    # LAGER_AUDIENCE: "https://b972600c4737.ngrok.io/gateway"
+    LAGER_AUDIENCE: "https://dev.lagerdata.app/gateway"
     LAGER_AUTH_URL: "https://dev-c-cvn8kq.auth0.com/"
   commands:
-  - lager flash --hexfile third_party/nRF5_SDK_17.0.0_9d13099/components/softdevice/s140/hex/s140_nrf52_7.0.1_softdevice.hex --hexfile _build/test/test_suite_mpu9250_drv/blue42_test_mpu9250_drv.hex
+  - lager testrun --serial-device /dev/ttyACM0 --hexfile /projects/blue42/s140_nrf52_7.0.1_softdevice.hex --hexfile /projects/blue42/_build/test/test_suite_mpu9250_drv/blue42_test_mpu9250_drv.hex  --test-runner unity
