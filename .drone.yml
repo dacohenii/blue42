@@ -7,7 +7,14 @@ clone:
     image: plugins/git
     recursive: true
 
+
 steps:
+- name: test_flash
+  image: lagerdata/lager-cli
+  commands:
+  - ls /etc/ssl/certs
+  - echo $LAGER_CAFILE_PATH
+  - cat $LAGER_CAFILE_PATH
 - name: submodules
   image: alpine/git
   commands:
@@ -25,10 +32,11 @@ steps:
   image: lagerdata/lager-cli
   environment:
     NOVERIFY: 1
-    LAGER_WS_HOST: "ws://dev.lagerdata.app:9000"
+    LAGER_WS_HOST: "wss://dev.lagerdata.app"
     LAGER_HOST: "https://dev.lagerdata.app"
     LAGER_CLIENT_ID: "XjJGqmcQdHo1DrpjmWdSFGJnfOrk2Asj"
     LAGER_AUDIENCE: "https://dev.lagerdata.app/gateway"
     LAGER_AUTH_URL: "https://dev-c-cvn8kq.auth0.com/"
   commands:
   - lager testrun --serial-device /dev/ttyACM0 --hexfile third_party/nRF5_SDK_17.0.0_9d13099/components/softdevice/s140/hex/s140_nrf52_7.0.1_softdevice.hex --hexfile _build/test/test_suite_mpu9250_drv/blue42_test_mpu9250_drv.hex --test-runner unity
+
